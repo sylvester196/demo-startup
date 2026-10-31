@@ -1,7 +1,7 @@
 name: CI and Deploy to GitHub Pages
 on:
   push:
-  branches: ["main"]
+    branches: ["main"]
   workflow_dispatch:
 # Grant the workflow permissions it needs to publish to Pages
 permissions:
