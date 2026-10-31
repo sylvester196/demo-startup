@@ -30,13 +30,13 @@ jobs:
         echo "All required files found."
     # 3. Basic HTML checks (similar to earlier CI example)
     - name: Basic HTML checks
-        run: |
-          set -euo pipefail
-          echo "Checking title and basic tags in index.html..."
-          grep -q "<title>My Demo Site</title>" index.html
-          grep -q "<h1>Welcome to My Demo Site</h1>" index.html
-          grep -q "script.js" index.html
-          echo "HTML looks good."
+      run: |
+        set -euo pipefail
+        echo "Checking title and basic tags in index.html..."
+        grep -q "<title>My Demo Site</title>" index.html
+        grep -q "<h1>Welcome to My Demo Site</h1>" index.html
+        grep -q "script.js" index.html
+        echo "HTML looks good."
     # 4. Prepare files for Pages deployment
     - name: Configure Pages
       uses: actions/configure-pages@v5
@@ -44,9 +44,7 @@ jobs:
     - name: Upload static site
       uses: actions/upload-pages-artifact@v3
       with:
-      # If your site is in a subfolder (e.g., "site/"), 
-# change this path
-#         path: "."
+        path: "."
   deploy:
     name: Deploy to GitHub Pages
     needs: build
@@ -55,3 +53,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
