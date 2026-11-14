@@ -13,4 +13,7 @@ their email.
 link. 
  
 ## Requirements 
-Node.js and MongoDB are required to run this application. 
+Node.js and MongoDB are required to run this application:
+- Node.js can be downloaded here: https://nodejs.org/en/download
+- MongoDB can be downloaded here: https://www.mongodb.com/
+
